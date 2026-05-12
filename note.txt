@@ -1,0 +1,2 @@
+För någon anldening kunde jag inte köra test.sh lokalt och behöve lämna in för att se resultatet. 
+Jag hoppas detta inte är något problem
