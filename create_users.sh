@@ -10,7 +10,9 @@ if [[ $user_id -ne 0 ]]; then
 fi
 
 echo "is root"
-mkdir /log/
+mkdir /log/ 
+
+echo ""
 
 for usr in $@; do
     echo "creating user $usr"
@@ -21,11 +23,18 @@ for usr in $@; do
     echo "$usr" >> /log/users
     echo "Välkommen $usr" > /home/$usr/welcome.txt
     # echo " " >> /home/$usr/welcome.txt
-    cat /log/users >> /home/$usr/welcome.txt
+    # cat /log/users >> /home/$usr/welcome.txt
     echo "handeling user perms"
     chown $usr /home/$usr/* && chgrp $usr /home/$usr/* && chmod 700 /home/$usr/* 
     echo $(ls -lR /home/$usr/)
-    
+    echo ""
+    echo ""
 done
 
 
+for usr in $@; do
+cat /log/users >> /home/$usr/welcome.txt
+cat /home/$usr/welcome.txt
+echo ""
+echo ""
+done
