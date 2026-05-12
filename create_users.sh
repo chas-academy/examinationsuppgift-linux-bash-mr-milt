@@ -19,10 +19,10 @@ for usr in $@; do
     echo "adding user to user log file" 
     echo "$usr" >> /log/users
     echo "Välkommen $usr" >> /home/$usr/welcome.txt
-    echo " " >> /home/$usr/welcome.txt
+    # echo " " >> /home/$usr/welcome.txt
     cat /log/users >> /home/$usr/welcome.txt
     echo "handeling user perms"
-    chown $usr /home/$usr/* && chgrp $usr /home/$usr/* && chmod u=rwx,o=rwx /home/$usr/* 
+    chown $usr /home/$usr/* && chgrp $usr /home/$usr/* && chmod 700 /home/$usr/* 
     echo $(ls -lR /home/$usr/)
     
 done
